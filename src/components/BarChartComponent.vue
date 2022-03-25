@@ -6,6 +6,7 @@
 <script lang="ts">
 import {Plotly} from 'vue-plotly'
 import { Layout, TickLocation } from '../models/ChartProperties'
+import barChartLayout from '../data/barChartLayout.json'
 export default ({
     name: 'BarChartComponent',
     components: {
@@ -22,9 +23,7 @@ export default ({
             y: [18,28,18,28],
             type: "line"
         }],
-        layout: {
-            title: 'Sample Bar Chart'
-        },
+        layout: JSON.parse(barChartLayout),
         displayModeBar: false
     }),
     computed: {
