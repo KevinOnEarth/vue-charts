@@ -1,4 +1,4 @@
-export interface Layout {
+export interface ChartLayout {
     title: string,
     height: number,
     autosize: boolean,
@@ -12,7 +12,8 @@ export interface Layout {
 
 interface Axis {
     title?: {
-        standoff?: number,
+        automargin?: boolean,  // a value of true and standoff of 4 is a good starting point
+        standoff?: number,     // automargin will adjust as the graph grows.
         text: string
     }
     ticks?: TickLocation,
@@ -25,14 +26,20 @@ interface Axis {
     showgrid?: boolean,
     side?: Side
 }
-export enum TickLocation {
+enum TickLocation {
     outside = 'outside',
     inside = 'inside',
     none = ''
 }
-export enum Side {
+enum Side {
     top = 'top',
     bottom = 'bottom',
     left = 'left',
     right = 'right'
+}
+
+export interface Trace {
+    x: string[] | number[] | Date[]
+    y: number[]
+    type: string
 }

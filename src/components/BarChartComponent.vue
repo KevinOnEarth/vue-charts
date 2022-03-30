@@ -4,53 +4,27 @@
     </div>
 </template>
 <script lang="ts">
+import Vue from 'vue'
 import {Plotly} from 'vue-plotly'
-import { Layout, TickLocation } from '../models/ChartProperties'
-export default ({
+import { ChartLayout, Trace } from '../models/ChartProperties'
+import barChartLayout from '../data/barChartLayout.json'
+import barChartData from '../data/barChartData.json'
+
+const BarChartComponent = Vue.extend({
     name: 'BarChartComponent',
     components: {
         Plotly
     },
-    data: ()=> ({
-        data:[{
-            x: [1,2,3,4],
-            y: [10,15,20,25],
-            type: "bar"
-        },
-        {
-            x: [1,2,3,4],
-            y: [18,28,18,28],
-            type: "line"
-        }],
-        layout: {
-            title: 'Sample Bar Chart'
-        },
+    data:()=> ({
+        data: barChartData as Trace[],
         displayModeBar: false
     }),
     computed: {
-        getLayout(): Layout {
-            let layout: Layout = {
-              title: 'Typescript Bar Chart Example',
-              height: 450,
-              showlegend: false,
-              autosize: true,
-              xaxis: {
-                title: { standoff: 2, text:'Something X Axis'},
-                ticks: TickLocation.outside
-              },
-              yaxis: {
-                title: {standoff: 4, text: 'Something Y Axis'},
-                ticks: TickLocation.outside
-              },
-              margin: {
-                l: 40,
-                r: 25,
-                t: 25,
-                b: 40
-              }
-            };
+        getLayout(): ChartLayout {
+            let layout: ChartLayout = JSON.parse(JSON.stringify(barChartLayout))
             return layout
         }
     }
 })
+export default BarChartComponent
 </script>

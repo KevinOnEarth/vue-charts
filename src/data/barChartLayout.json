@@ -1,0 +1,23 @@
+{
+    "title": "Sample Typescript Bar Chart Example",
+    "height": 450,
+    "width": 600,
+    "showlegend": false,
+    "autosize": true,
+    "xaxis": {
+        "automargin": true,
+        "title": { "text":"Something X Axis"},
+        "ticks": "outside"
+    },
+    "yaxis": {
+        "automargin": true,
+        "title": {"standoff": 4, "text": "Something Y Axis"},
+        "ticks": "inside"
+    },
+    "margin": {
+        "l": 40,
+        "r": 25,
+        "t": 25,
+        "b": 40
+    }
+}
