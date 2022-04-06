@@ -1,0 +1,26 @@
+{
+    "title": "Sample Typescript Gantt Chart Example",
+    "height": 450,
+    "width": 600,
+    "showlegend": false,
+    "autosize": true,
+    "xaxis": {
+        "visible": true,
+        "automargin": true,
+        "title": { "text":"Something X Axis"},
+        "ticks": "outside",
+        "type": "date"
+    },
+    "yaxis": {
+        "automargin": true,
+        "title": {"standoff": 4, "text": "Project/Tasks"},
+        "ticks": "inside",
+        "showTickLabels": true
+    },
+    "margin": {
+        "l": 40,
+        "r": 25,
+        "t": 25,
+        "b": 40
+    }
+}

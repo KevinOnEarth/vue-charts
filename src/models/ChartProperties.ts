@@ -40,6 +40,6 @@ enum Side {
 
 export interface Trace {
     x: string[] | number[] | Date[]
-    y: number[]
+    y: string[] | number[]
     type: string
 }

@@ -1,17 +1,20 @@
 <template>
   <div id="app">
     <BarChartComponent />
+    <hr />
+    <GanttChartComponent />
   </div>
 </template>
 
 <script lang="ts">
-import BarChartComponent from './components/BarChartComponent.vue';
-
+import BarChartComponent from "./components/BarChartComponent.vue";
+import GanttChartComponent from "./components/GanttChartComponent.vue";
 export default {
   components: {
-    BarChartComponent
-  }
-}
+    BarChartComponent,
+    GanttChartComponent,
+  },
+};
 </script>
 
 <style>
